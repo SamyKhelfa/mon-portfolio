@@ -1,0 +1,80 @@
+/* Header et navigation */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+header {
+    background-color: #333;
+    padding: 1rem;
+    display: flex;
+    padding-left: 50px; /* Adjust this value as needed */
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  nav ul li {
+    margin-right: 1rem;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  /* Contenu principal */
+main {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+
+  /* About */
+.about {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .about img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 2rem;
+  }
+  
+  .about-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  body {
+    font-family: 'Roboto', fallback-fonts, sans-serif;
+    background-color: black;
+
+  }
+
+  /* App.css */
+.App h1 {
+  font-size: 50px; /* Adjust the font size as needed */
+  color: white; /* Change the text color */
+  text-align: center; /* Center-align text */
+  max-width: 80%; /* Max width of the text */
+  margin: 20px auto; /* Center the text block with automatic margins */
+  line-height: 1.6; /* Adjust line spacing for readability */
+  margin-top: 5%;
+}
+
+p{
+  color: white
+}
+
+.App h2{
+color: white;
+}
+
+
