@@ -10,7 +10,7 @@ import logoMongoDB from './assets/mongodb-logo.png'
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-stone-900">
       <Header />
       <main className="flex flex-col min-h-screen">
       <div className="text-center mt-6 mb-10">
