@@ -1,12 +1,26 @@
 // src/components/Header.js
 import React, { useState } from 'react';
 import '../styles/header.css';
-import menuIcon from '../assets/menu.png'; // Assure-toi que le chemin est correct
-import franceFlag from '../assets/france-flag.webp'; // Assure-toi que le chemin est correct
+import menuIcon from '../assets/menu.png'; // Assurez-vous que le chemin est correct
+import franceFlag from '../assets/france-flag.webp'; // Assurez-vous que le chemin est correct
+import ukFlag from '../assets/uk-flag.png'; // Assurez-vous que le chemin est correct
+import i18n from 'i18next';
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [showLanguageTip, setShowLanguageTip] = useState(false);
+
+  const handleLanguageChange = () => {
+    const newLang = i18n.language === 'fr' ? 'en' : 'fr';
+    i18n.changeLanguage(newLang);
+    setShowLanguageTip(false); // Hide the tooltip once language is changed
+  };
+
+  const languageTipText = i18n.language === 'fr'
+    ? "Not fluent in Moliere's language? Click here."
+    : "Vous ne maîtrisez pas la langue de Shakespeare ? Cliquez ici.";
+
+  const flagImage = i18n.language === 'fr' ? ukFlag : franceFlag;
 
   return (
     <header className="bg-gray-800 text-white">
@@ -15,7 +29,8 @@ const Header = () => {
           <img src={menuIcon} alt="Menu" className="h-6 w-6" />
         </button>
 
-        <nav className="flex-grow">
+        {/* Navigation links visible only on medium screens and up */}
+        <nav className="hidden md:flex flex-grow">
           <ul className="flex justify-center space-x-10">
             <li><a href="#home" className="hover:text-teal-400 transition duration-300">Home</a></li>
             <li><a href="#about" className="hover:text-teal-400 transition duration-300">About</a></li>
@@ -27,15 +42,16 @@ const Header = () => {
 
         <div className="relative">
           <div onMouseEnter={() => setShowLanguageTip(true)} onMouseLeave={() => setShowLanguageTip(false)} className="flex items-center justify-end ml-4">
-            <img src={franceFlag} alt="French Flag" className="h-6 w-6 cursor-pointer" />
+            <img src={flagImage} alt="Language Flag" className="h-6 w-6 cursor-pointer" onClick={handleLanguageChange} />
           </div>
           {showLanguageTip && (
             <div className="absolute right-0 top-full mt-2 w-max bg-black text-white text-sm p-2 border rounded">
-              Vous ne maîtrisez pas la langue de Shakespeare ? Cliquez ici.
+              {languageTipText}
             </div>
           )}
         </div>
 
+        {/* Mobile menu that toggles based on state */}
         {isNavOpen && (
           <div className="absolute top-0 left-0 mt-12 w-full bg-gray-800 md:hidden">
             <ul className="flex flex-col items-start pl-4 py-2">
