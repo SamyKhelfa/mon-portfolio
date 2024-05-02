@@ -4,6 +4,8 @@ import '../styles/footer.css';
 import logoGitHub from '../assets/github-logo.png'; // Vérifie le chemin d'accès
 import logoLinkedIn from '../assets/linkedin-logo.webp'; // Vérifie le chemin d'accès
 
+
+
 const Footer = () => {
     return (
 <footer className="bg-gray-800 text-white p-4">

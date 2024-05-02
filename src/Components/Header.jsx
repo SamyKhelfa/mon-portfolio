@@ -5,8 +5,11 @@ import menuIcon from '../assets/menu.png'; // Assurez-vous que le chemin est cor
 import franceFlag from '../assets/france-flag.webp'; // Assurez-vous que le chemin est correct
 import ukFlag from '../assets/uk-flag.png'; // Assurez-vous que le chemin est correct
 import i18n from 'i18next';
+import { useTranslation } from 'react-i18next';
+
 
 const Header = () => {
+  const { t } = useTranslation();
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [showLanguageTip, setShowLanguageTip] = useState(false);
 
@@ -32,8 +35,8 @@ const Header = () => {
         {/* Navigation links visible only on medium screens and up */}
         <nav className="hidden md:flex flex-grow">
           <ul className="flex justify-center space-x-10">
-            <li><a href="#home" className="hover:text-teal-400 transition duration-300">Home</a></li>
-            <li><a href="#about" className="hover:text-teal-400 transition duration-300">About</a></li>
+            <li><a href="#home" className="hover:text-teal-400 transition duration-300">{t('Home')}</a></li>
+            <li><a href="#about" className="hover:text-teal-400 transition duration-300">{t('About')}</a></li>
             <li><a href="#services" className="hover:text-teal-400 transition duration-300">Services</a></li>
             <li><a href="#portfolio" className="hover:text-teal-400 transition duration-300">Portfolio</a></li>
             <li><a href="#contact" className="hover:text-teal-400 transition duration-300">Contact</a></li>

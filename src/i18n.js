@@ -10,7 +10,12 @@ i18n
     resources: {
       en: {
         translation: {
-          Hello: "Hello 👋, I'm Samy Khelfa",
+          Home: "Home",
+          About: "About",
+          Services: "Services",
+          Portfolio: "Portfolio",
+          Contact: "Contact",
+          Hello: "Hello 👋, I'm Samy",
           Description:
             "A passionate web and mobile developer based in Paris. I craft dynamic and innovative web applications. Dive into my creative world where technology meets design to bring unique projects to life.",
           Portfolio: "Portfolio",
@@ -23,7 +28,9 @@ i18n
       },
       fr: {
         translation: {
-          Hello: "Bonjour 👋, je suis Samy Khelfa",
+          Home: "Acceuil",
+          About: "A propos",
+          Hello: "Bonjour 👋, je suis Samy",
           Description:
             "Développeur web et mobile passionné basé à Paris. Je réalise des applications web dynamiques et innovantes. Plongez dans mon monde créatif où la technologie rencontre le design pour donner vie à des projets uniques.",
           Portfolio: "Portfolio",
