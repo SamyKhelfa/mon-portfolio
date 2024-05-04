@@ -24,6 +24,9 @@ i18n
           RAWG_project_description:
             "This is a website that uses the RAWG API to catalog all existing video games (release date, synopsis, screenshots, description, etc.).",
           MyTechnologies: "My technologies",
+          Name: "Name",
+          Subject: "Subject",
+          Send: "Send",
         },
       },
       fr: {
@@ -39,6 +42,9 @@ i18n
           RAWG_project_description:
             "Ceci est un site qui utilise l'API RAWG pour cataloguer tous les jeux vidéo existants (date de sortie, synopsis, captures d'écran, description, etc.).",
           MyTechnologies: "Mes technologies",
+          Name: "Nom",
+          Subject: "Sujet",
+          Send: "Envoyer",
         },
       },
     },

@@ -13,6 +13,25 @@ import marvelLogo from './assets/marvel-logo.png';
 import rawgLogo from './assets/rawg-logo.webp';
 import captureGamepad from './assets/capture-gamepad.jpg';
 import './i18n';
+import emailjs from 'emailjs-com';
+
+const apiKey = process.env.API_KEY
+
+emailjs.init(apiKey);
+
+function sendEmail(e) {
+  e.preventDefault();
+  emailjs.sendForm('service_fhr3jck', 'template_bqt9hob', e.target)
+    .then((result) => {
+        console.log('Email successfully sent!', result.text);
+        alert('Message sent successfully!');
+    }, (error) => {
+        console.log('Failed to send email:', error.text);
+        alert('Failed to send the message, please try again');
+    });
+}
+
+
 
 
 function App() {
@@ -66,6 +85,19 @@ function App() {
             </div>
           </div>
         </div>
+        <section id="contact" className="text-center p-10">
+          <h2 className="text-4xl font-bold mb-4">{t('Contact')}</h2>
+          <form className="max-w-xl mx-auto" onSubmit={sendEmail}>
+  <input type="text" name="from_name" placeholder={t('Name')} className="w-full p-2 mb-4 border rounded" required />
+  <input type="email" name="user_email" placeholder={t('Email')} className="w-full p-2 mb-4 border rounded" required />
+  <input type="text" name="subject" placeholder={t('Subject')} className="w-full p-2 mb-4 border rounded" required />
+  <textarea name="message" placeholder={t('Message')} className="w-full p-2 mb-4 border rounded h-40" required></textarea>
+  <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    {t('Send')}
+  </button>
+</form>
+
+        </section>
       </main>
       <Footer />
     </div>
